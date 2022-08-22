@@ -1,0 +1,5 @@
+1. pip install -r requirements.txt
+2. flask db init
+3. flask db revision --autogenerate
+4. flask db upgrade
+5. python3 app.py

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% from 'macros/back_to_posts.html' import back_to_posts_page %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {{ back_to_posts_page() }}
+    <div class="card mt-5">
+        <div class="card-body">
+            <h1 class="card-title text-center">{{ post.title }}</h1>
+            <p class="card-text mt-3 ms-3" style="font-size: 1.2em">{{ post.text }}</p>
+        </div>
+    </div>
+
+    <h1 class="mt-5"> Comments </h1>
+    {% for comment in comments %}
+    <div class="card mt-3">
+        <div class="card-body">
+            {{ comment.text }}
+        </div>
+    </div>
+
+    {% endfor %}
+
+    <a class="btn btn-primary mt-3" href="{{ url_for('comment_app.add', post_id=post.id) }} " role="button">Leave comment</a>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% from 'macros/back_to_posts.html' import back_to_posts_page %}
+
+{% block title %}
+    Add post
+{% endblock %}
+
+{% block content %}
+    {{ back_to_posts_page() }}
+
+    <h1>Add post here</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }}
+            {{ form.title(class="form-control") }}
+        </div>
+
+        <div>
+            {{ form.text.label }}
+            {{ form.text(class="form-control") }}
+        </div>
+<br>
+    <input type="submit" value="Save" class="btn btn-primary mt-3">
+    </form>
+
+{% endblock %}
